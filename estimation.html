@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <!-- A simple estimation (planning poker) deck -->
+  <head>
+    <title>Estimation</title>
+    <script src="cards.js"></script>
+    <style>
+      h1 { display: none; }
+      #canvas {
+        position: absolute;
+        left: 0; top: 0; right: 0; bottom: 0;
+        background-color: black;
+      }
+      .card-container div {
+        font-size: 4.5em;
+        width: 1.5em;
+        height: 1em;
+        text-align: center;
+        line-height: 1em;
+        vertical-align: middle;
+        border: solid red 0.1em;
+        border-radius: 0.1em;
+        font-family: sans-serif;
+        font-weight: bold;
+        background-color: white;
+        color: black;
+        text-shadow: #666 0.01em 0.01em 0.02em;
+      }
+      .card-container #pause span {
+        font-size: 40%;
+        vertical-align: middle;
+      }
+      .card-container #c100 span {
+        font-size: 70%;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Estimation</h1>
+    <div id="canvas"></div>
+    <div id="cards">
+      <div>0</div>
+      <div>&frac12;</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>5</div>
+      <div>8</div>
+      <div>13</div>
+      <div>20</div>
+      <div>42</div>
+      <div id="c100"><span>100</span></div>
+      <div>?</div>
+      <div>&infin;</div>
+      <div id="pause"><span>Pause</span></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+Cards - A really simple deck of cards
+
+Instructions: make a HTML file containing
+- a <div id="canvas"> and styles for it
+- a <div id="cards"> containing the cards as individual elements
+- styles for the cards.
+- include this script
+
+This will display all cards or the selected card, fitted into the
+#canvas. Click/touch a card to select it or to return to the
+selection.
+
+Cards are scaled to fit the screen size by adjusting the font
+size. Therefore, styles for cards should be relative to the font
+size (=specified in em); pixel dimensions will not work. Cards
+will be placed within a container that has class "card-container".
+In addition, the container will have "card-selection" or
+"card-current", depending on whether all cards or just the current
+card are shown.
+
+(c) 2017 Stefan Reuther <streu@gmx.de>
