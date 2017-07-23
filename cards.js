@@ -71,7 +71,7 @@ window.addEventListener('load', function() {
                 if (++n > 100) break; // safety net
             }
 
-            // Now, interpolate. 10 means a precision of 0.1% (1/1024).
+            // Now, interpolate. 10 iterations means a precision of 0.1% (1/1024).
             var scaleHi = 2*scale;
             for (var i = 0; i < 10; ++i) {
                 var scaleMid = (scale + scaleHi)/2;
@@ -82,10 +82,17 @@ window.addEventListener('load', function() {
                 }
             }
 
+            // Compute grid size
+            var cw = floor(cardWidth*scale+delta), ch = floor(cardHeight*scale+delta);
+            var w = floor(canvasWidth / cw), h = floor(canvasHeight / ch);
+
+            // Make it more square, i.e. given 4 cards and 2x3 space, prefer a 2+2 layout instead of 3+1.
+            while ((w-1)*h >= cards.length) {
+                --w;
+            }
+
             // Render
             var x = 0, y = 0;
-            var cw = floor(cardWidth*scale+delta),  ch = floor(cardHeight*scale+delta);
-            var w  = floor(canvasWidth / cw), h  = floor(canvasHeight / ch);
             var x0 = floor((canvasWidth - cw*w) / 2), y0 = floor((canvasHeight - ch*h) / 2);
             for (i = 0; i < cards.length; ++i) {
                 var ele = document.createElement('DIV');
